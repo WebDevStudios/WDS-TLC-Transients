@@ -64,9 +64,9 @@ function wds_get_featured_posts( $cache_bust = false ) {
 /**
  * Flush out transients.
  */
-function wds_microsoft_transient_flusher() {
+function wds_transient_flusher() {
 	wds_query_featured_posts( true );
 	wds_get_featured_posts( true );
 }
-add_action( 'edit_category', 'wds_microsoft_transient_flusher' );
-add_action( 'save_post',     'wds_microsoft_transient_flusher' );
+add_action( 'edit_category', 'wds_transient_flusher' );
+add_action( 'save_post',     'wds_transient_flusher' );
