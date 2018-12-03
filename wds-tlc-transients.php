@@ -3,7 +3,7 @@
  * Plugin Name: WDS TLC Transients
  * Plugin URI: http://webdevstudios
  * Description: Set up TLC transients for theme.
- * Version: 1.0
+ * Version: 1.0.0
  * Author: WebDevStudios
  * Author URI: http://webdevstudios.com
  * License: GPLv2 or later
