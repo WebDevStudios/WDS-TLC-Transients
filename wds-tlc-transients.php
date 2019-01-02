@@ -9,9 +9,31 @@
  * License: GPLv2 or later
  */
 
-// Get the bootstrap
-require_once 'wp-tlc-transients/tlc-transients.php';
+wds_tlc_load_dependency();
 
+/**
+ * Load this plugin's third-party dependency.
+ *
+ * Check whether it's relative to this plugin's root, or to the wp-content directory, using default Composer vendor
+ * directory names.
+ *
+ * @author Jeremy Ward <jeremy.ward@webdevstudios.com>
+ * @since  2019-01-02
+ * @return void
+ */
+function wds_tlc_load_dependency() {
+	$file       = '/vendor/markjaquith/wp-tlc-transients/tlc-transients.php';
+	$paths = array_filter( [
+		untrailingslashit( __DIR__ ) . $file,
+		untrailingslashit( WP_CONTENT_DIR ) . $file,
+	], function ( $path ) {
+		return is_readable( $path );
+	} );
+
+	if ( count( $paths ) ) {
+		require_once $paths[0];
+	}
+}
 
 /**
  * Use in place of `get_posts()`.
