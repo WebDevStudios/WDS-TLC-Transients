@@ -1,5 +1,13 @@
 {
     "name": "webdevstudios/wds-tlc-transients",
     "type": "wordpress-plugin",
-    "require": {}
+    "require": {
+        "markjaquith/wp-tlc-transients": "dev-master"
+    },
+    "repositories": [
+        {
+            "type": "git",
+            "url": "https://github.com/markjaquith/wp-tlc-transients.git"
+        }
+    ]
 }
