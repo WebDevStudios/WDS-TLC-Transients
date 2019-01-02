@@ -22,13 +22,13 @@ wds_tlc_load_dependency();
  * @return void
  */
 function wds_tlc_load_dependency() {
-	$file       = '/vendor/markjaquith/wp-tlc-transients/tlc-transients.php';
-	$paths = array_filter( [
+	$file  = '/vendor/markjaquith/wp-tlc-transients/tlc-transients.php';
+	$paths = array_values( array_filter( [
 		untrailingslashit( __DIR__ ) . $file,
 		untrailingslashit( WP_CONTENT_DIR ) . $file,
 	], function ( $path ) {
 		return is_readable( $path );
-	} );
+	} ) );
 
 	if ( count( $paths ) ) {
 		require_once $paths[0];
